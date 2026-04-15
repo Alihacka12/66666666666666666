@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Ramile 💕</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html,body{width:100%;height:100%;overflow:hidden;background:#06030a;font-family:'Cormorant Garamond',serif;color:#fff0f5;user-select:none;}
+
+#cvs{position:fixed;inset:0;z-index:0;pointer-events:none;}
+
+/* ── SCREEN ── */
+.screen{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.5rem 1.2rem;z-index:10;transition:opacity .8s cubic-bezier(.4,0,.2,1),transform .8s cubic-bezier(.4,0,.2,1);}
+.screen.out{opacity:0;pointer-events:none;transform:scale(.93);}
+
+/* ── SCREEN 1 ── */
+#s1{background:radial-gradient(ellipse 80% 60% at 50% 0%,#4a0828 0%,transparent 70%),radial-gradient(ellipse 60% 40% at 80% 100%,#1e0633 0%,transparent 60%),radial-gradient(ellipse 50% 50% at 20% 80%,#3a0618 0%,transparent 60%),#06030a;text-align:center;overflow:hidden;}
+
+.orbit-wrap{position:relative;width:160px;height:160px;margin:0 auto 1rem;}
+.orbit-ring{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(255,255,255,.12);animation:spin 12s linear infinite;}
+.orbit-ring::before{content:'✦';position:absolute;top:-8px;left:50%;transform:translateX(-50%);font-size:.7rem;color:rgba(255,255,255,.5);}
+.orbit-ring:nth-child(2){inset:12px;border-color:rgba(255,45,85,.25);animation:spin 8s linear infinite reverse;}
+.orbit-ring:nth-child(2)::before{content:'♡';color:rgba(255,45,85,.6);font-size:.9rem;}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+.rose-wrap{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;animation:pulse 2.2s ease-in-out infinite;}
+.rose-ico{font-size:4rem;filter:drop-shadow(0 0 22px #ff2d5599);}
+@keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.1);}}
+
+.sparkle{position:absolute;border-radius:50%;background:radial-gradient(circle,#fff 0%,transparent 70%);animation:twinkle 2s ease-in-out infinite;}
+@keyframes twinkle{0%,100%{opacity:0;transform:scale(0);}50%{opacity:1;transform:scale(1);}}
+
+.name{font-family:'Dancing Script',cursive;font-size:clamp(3.2rem,15vw,6rem);background:linear-gradient(135deg,#ff9ab5,#ff2d55,#c0002e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 20px #ff2d5560);line-height:1;animation:slideUp .9s cubic-bezier(.16,1,.3,1) both;}
+@keyframes slideUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+
+.tagline{font-style:italic;font-size:clamp(.85rem,3.5vw,1.05rem);color:#ffb3c6;letter-spacing:.06em;margin-top:.3rem;animation:slideUp 1.1s .1s cubic-bezier(.16,1,.3,1) both;}
+
+.divider{display:flex;align-items:center;gap:.7rem;margin:1.1rem auto;animation:slideUp 1.2s .2s cubic-bezier(.16,1,.3,1) both;}
+.divider span{width:50px;height:1px;background:linear-gradient(90deg,transparent,#d4a04a);}
+.divider span:last-child{background:linear-gradient(90deg,#d4a04a,transparent);}
+.divider-ico{font-size:.85rem;color:#d4a04a;}
+
+.question{font-family:'Playfair Display',serif;font-size:clamp(1.15rem,5.2vw,1.65rem);line-height:1.7;max-width:310px;animation:slideUp 1.3s .3s cubic-bezier(.16,1,.3,1) both;}
+.question em{color:#ff9ab5;font-style:italic;}
+
+.hearts-strip{display:flex;gap:.5rem;margin:1rem 0;animation:slideUp 1.4s .4s cubic-bezier(.16,1,.3,1) both;}
+.hs-h{font-size:1.4rem;animation:hpop 1.6s ease-in-out infinite;}
+.hs-h:nth-child(2){animation-delay:.2s;}.hs-h:nth-child(3){animation-delay:.4s;}.hs-h:nth-child(4){animation-delay:.6s;}.hs-h:nth-child(5){animation-delay:.8s;}
+@keyframes hpop{0%,100%{transform:scale(1) translateY(0);}50%{transform:scale(1.25) translateY(-5px);}}
+
+/* ── BUTTONS ── */
+#byes{position:fixed;bottom:80px;left:50%;transform:translateX(-50%);z-index:50;background:linear-gradient(135deg,#ff2d55 0%,#a8002a 100%);color:#fff;border:none;padding:1rem 3rem;border-radius:50px;font-family:'Playfair Display',serif;font-size:1.2rem;cursor:pointer;letter-spacing:.04em;box-shadow:0 0 0 0 #ff2d5566,0 8px 30px #ff2d5550;animation:slideUp 1.5s .5s cubic-bezier(.16,1,.3,1) both,glow 2.5s 2s ease-in-out infinite;touch-action:manipulation;transition:transform .15s,box-shadow .15s;}
+@keyframes glow{0%,100%{box-shadow:0 0 0 0 #ff2d5566,0 8px 30px #ff2d5550;}50%{box-shadow:0 0 0 10px #ff2d5500,0 8px 40px #ff2d5580;}}
+#byes:active{transform:translateX(-50%) scale(.96);}
+
+#bno{position:fixed;z-index:50;background:rgba(255,255,255,.06);backdrop-filter:blur(6px);color:#ffb3c6;border:1px solid rgba(255,179,198,.35);padding:.75rem 1.8rem;border-radius:50px;font-family:'Playfair Display',serif;font-size:1rem;cursor:pointer;transition:top .3s cubic-bezier(.36,.07,.19,.97),left .3s cubic-bezier(.36,.07,.19,.97),opacity .4s,font-size .3s,padding .3s;animation:slideUp 1.6s .6s cubic-bezier(.16,1,.3,1) both;touch-action:manipulation;}
+
+/* ── ALARM ── */
+#alarm{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.92);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.1rem;padding:2rem;opacity:0;pointer-events:none;transition:opacity .35s;}
+#alarm.on{opacity:1;pointer-events:all;}
+
+#alarm::before{content:'';position:fixed;inset:0;border:4px solid #ff0033;box-shadow:inset 0 0 50px #ff003366,0 0 50px #ff003366;animation:flashBorder 1s ease-in-out infinite;pointer-events:none;z-index:201;}
+@keyframes flashBorder{0%,100%{opacity:1;box-shadow:inset 0 0 70px #ff003399,0 0 70px #ff003399;}50%{opacity:.2;box-shadow:inset 0 0 10px #ff003311,0 0 10px #ff003311;}}
+
+.siren{display:flex;gap:1rem;}
+.siren-l,.siren-r{font-size:3rem;animation:sirenBlink 1s ease-in-out infinite;}
+.siren-r{animation-delay:.5s;}
+@keyframes sirenBlink{0%,100%{filter:drop-shadow(0 0 18px #ff0033) brightness(1.5);}50%{filter:drop-shadow(0 0 0px #ff0033) brightness(.5);}}
+
+.alarm-emoji{font-size:4rem;animation:shake .35s ease-in-out infinite;}
+@keyframes shake{0%,100%{transform:rotate(0deg);}25%{transform:rotate(-14deg);}75%{transform:rotate(14deg);}}
+
+.alarm-title{font-family:'Playfair Display',serif;font-size:clamp(1.4rem,6vw,2rem);color:#ff4466;text-align:center;text-shadow:0 0 20px #ff003388;animation:alarmPulse 1s ease-in-out infinite;}
+@keyframes alarmPulse{0%,100%{transform:scale(1);}50%{transform:scale(1.07);}}
+
+.alarm-sub{font-style:italic;font-size:clamp(.88rem,3.5vw,1.08rem);color:#ffaaaa;text-align:center;max-width:280px;line-height:1.6;}
+
+.alarm-bar-wrap{width:240px;height:7px;background:rgba(255,255,255,.1);border-radius:4px;overflow:hidden;}
+.alarm-bar{height:100%;width:100%;background:linear-gradient(90deg,#ff0033,#ff6688);border-radius:4px;animation:drain 5s linear infinite;}
+@keyframes drain{0%{width:100%;}100%{width:0%;}}
+
+.alarm-btns{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;}
+#btn-emin-evet{background:linear-gradient(135deg,#ff2d55,#8b0a2e);color:#fff;border:none;padding:.9rem 2.2rem;border-radius:50px;font-family:'Playfair Display',serif;font-size:1.1rem;cursor:pointer;box-shadow:0 6px 20px #ff2d5566;touch-action:manipulation;animation:glow 1.5s ease-in-out infinite;}
+#btn-emin-xeyr{background:transparent;color:#ffaaaa;border:1px solid #ff444488;padding:.9rem 1.8rem;border-radius:50px;font-family:'Playfair Display',serif;font-size:1.1rem;cursor:pointer;touch-action:manipulation;}
+
+#alarm .scanlines{position:fixed;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(255,0,0,.04) 3px,rgba(255,0,0,.04) 4px);z-index:202;}
+
+/* ── SCREEN 2 ── */
+#s2{background:radial-gradient(ellipse 70% 50% at 50% 0%,#2a0d18 0%,transparent 65%),radial-gradient(ellipse 50% 40% at 0% 100%,#1a0530 0%,transparent 60%),#06030a;overflow-y:auto;justify-content:flex-start;padding-top:2.5rem;padding-bottom:3rem;text-align:center;-webkit-overflow-scrolling:touch;}
+#s2::-webkit-scrollbar{display:none;}
+
+.ye-ico{font-size:3.5rem;animation:bounceIn .55s both;}
+@keyframes bounceIn{0%{transform:scale(0);opacity:0;}60%{transform:scale(1.18);opacity:1;}80%{transform:scale(.93);}100%{transform:scale(1);}}
+.ye-title{font-family:'Dancing Script',cursive;font-size:clamp(2.2rem,10vw,3.5rem);background:linear-gradient(135deg,#ff9ab5,#ff2d55);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-top:.3rem;animation:slideUp .5s .2s ease both;}
+
+.w-hearts{display:flex;gap:.4rem;margin:.8rem 0;animation:slideUp .5s .3s ease both;}
+.wh{font-size:1.6rem;color:white;text-shadow:0 0 12px rgba(255,255,255,.9);animation:hpop 1.8s ease-in-out infinite;}
+.wh:nth-child(2){animation-delay:.15s;}.wh:nth-child(3){animation-delay:.3s;}.wh:nth-child(4){animation-delay:.45s;}.wh:nth-child(5){animation-delay:.6s;}.wh:nth-child(6){animation-delay:.75s;}.wh:nth-child(7){animation-delay:.9s;}
+
+.letter{background:linear-gradient(145deg,rgba(30,8,20,.95),rgba(18,5,12,.95));border:1px solid rgba(255,45,85,.3);border-radius:22px;padding:2rem 1.4rem;margin:1rem 0;max-width:420px;width:100%;box-shadow:0 20px 60px rgba(255,45,85,.15),inset 0 1px 0 rgba(255,45,85,.25);animation:slideUp .5s .4s ease both;text-align:left;position:relative;overflow:hidden;}
+.letter::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(255,45,85,.08) 0%,transparent 60%);pointer-events:none;}
+.letter::after{content:'❝';position:absolute;top:.5rem;right:1rem;font-size:5rem;color:rgba(255,45,85,.1);font-family:Georgia,serif;line-height:1;}
+.l-hello{font-family:'Dancing Script',cursive;font-size:1.6rem;color:#ff6b8a;margin-bottom:1rem;}
+.l-body{font-size:clamp(.88rem,3.4vw,1.02rem);line-height:2;color:#f0c8d5;font-style:italic;}
+.l-body p{margin-bottom:.85rem;}
+.l-body p:last-child{margin-bottom:0;}
+.l-sign{font-family:'Dancing Script',cursive;font-size:1.3rem;color:#d4a04a;margin-top:1.2rem;text-align:right;}
+
+.w-hearts-big{display:flex;gap:.6rem;margin:1rem 0 2rem;animation:slideUp .5s .7s ease both;}
+.whb{font-size:2.2rem;color:white;text-shadow:0 0 18px rgba(255,255,255,.95),0 0 40px rgba(255,255,255,.4);animation:hpop 2s ease-in-out infinite;}
+.whb:nth-child(2){animation-delay:.3s;}.whb:nth-child(3){animation-delay:.6s;}.whb:nth-child(4){animation-delay:.9s;}.whb:nth-child(5){animation-delay:1.2s;}
+
+/* CONFETTI */
+#conf{position:fixed;inset:0;pointer-events:none;z-index:500;}
+.c{position:absolute;animation:cf linear forwards;}
+@keyframes cf{0%{transform:translateY(-20px) rotate(0deg);opacity:1;}100%{transform:translateY(105vh) rotate(800deg);opacity:0;}}
+</style>
+</head>
+<body>
+
+<canvas id="cvs"></canvas>
+
+<!-- SCREEN 1 -->
+<div class="screen" id="s1">
+  <div class="orbit-wrap">
+    <div class="orbit-ring"></div>
+    <div class="orbit-ring"></div>
+    <div class="sparkle" style="width:5px;height:5px;top:10px;left:50%;animation-delay:0s;"></div>
+    <div class="sparkle" style="width:4px;height:4px;top:50%;right:8px;animation-delay:.4s;"></div>
+    <div class="sparkle" style="width:5px;height:5px;bottom:12px;left:45%;animation-delay:.8s;"></div>
+    <div class="sparkle" style="width:3px;height:3px;top:40%;left:9px;animation-delay:1.2s;"></div>
+    <div class="rose-wrap"><span class="rose-ico">🌹</span></div>
+  </div>
+  <div class="name">Ramile</div>
+  <div class="tagline">sənə bir şey soruşmaq istəyirəm...</div>
+  <div class="divider"><span></span><span class="divider-ico">✦</span><span></span></div>
+  <div class="question">Mənim <em>sevgilim</em> olmaq istəyirsənmi? 🥺</div>
+  <div class="hearts-strip">
+    <span class="hs-h">🤍</span><span class="hs-h">🤍</span><span class="hs-h">🤍</span>
+    <span class="hs-h">🤍</span><span class="hs-h">🤍</span>
+  </div>
+</div>
+
+<button id="byes" onclick="doYes()">Bəli ❤️</button>
+<button id="bno">Xeyr</button>
+
+<!-- ALARM -->
+<div id="alarm">
+  <div class="scanlines"></div>
+  <div class="siren"><span class="siren-l">🚨</span><span class="siren-r">🚨</span></div>
+  <div class="alarm-emoji">💔</div>
+  <div class="alarm-title">Əmin misiniz?!</div>
+  <div class="alarm-sub">Bu qərar çox böyük olar… ürəyim qırılacaq 🥺</div>
+  <div class="alarm-bar-wrap"><div class="alarm-bar"></div></div>
+  <div class="alarm-btns">
+    <button id="btn-emin-evet" onclick="doYes()">Yox, Bəli! ❤️</button>
+    <button id="btn-emin-xeyr" onclick="alarmContinue()">Xeyr deyirəm…</button>
+  </div>
+</div>
+
+<!-- SCREEN 2 -->
+<div class="screen out" id="s2">
+  <div class="ye-ico">🎉💕🎉</div>
+  <div class="ye-title">Ən xoşbəxt insanam!</div>
+  <div class="w-hearts">
+    <span class="wh">🤍</span><span class="wh">🤍</span><span class="wh">🤍</span>
+    <span class="wh">🤍</span><span class="wh">🤍</span><span class="wh">🤍</span><span class="wh">🤍</span>
+  </div>
+  <div class="letter">
+    <div class="l-hello">Əziz Ramilem,</div>
+    <div class="l-body">
+      <p>Sən mənim həyatıma girəndən hər şey dəyişdi. Hər sabah gözlərimi açanda ilk düşüncəm sənsən.</p>
+      <p>Gülüşün — dünyamı nurlandırır. Baxışların — ürəyimi coşdurur. Səsin — qulağımda ən gözəl musiqi kimi əks-səda verir.</p>
+      <p>Sənin olmağını istəyirəm — ən çətin anlarda da, ən gözəl anlarda da. Əlindən tutub hər yola getmək istəyirəm.</p>
+      <p>Çünki bu dünyada tək bir sən varsın — <em>mənim əziz Ramilem.</em> 🌹</p>
+    </div>
+    <div class="l-sign">— Sənin olub qalan biri 💌</div>
+  </div>
+  <div class="w-hearts-big">
+    <span class="whb">🤍</span><span class="whb">🤍</span><span class="whb">🤍</span>
+    <span class="whb">🤍</span><span class="whb">🤍</span>
+  </div>
+</div>
+
+<div id="conf"></div>
+
+<script>
+/* ══════════════════════════════
+   AUDIO ENGINE
+══════════════════════════════ */
+let AudioCtx, masterGain, bgPlaying = false, alarmNodes = [], alarmPlaying = false;
+
+function getCtx(){
+  if(!AudioCtx) AudioCtx = new (window.AudioContext||window.webkitAudioContext)();
+  return AudioCtx;
+}
+
+/* Soft romantic background melody */
+function startBgMusic(){
+  if(bgPlaying) return;
+  bgPlaying = true;
+  const ac = getCtx();
+  masterGain = ac.createGain();
+  masterGain.gain.setValueAtTime(0, ac.currentTime);
+  masterGain.gain.linearRampToValueAtTime(.18, ac.currentTime+2);
+  masterGain.connect(ac.destination);
+
+  // Simple lullaby notes loop: C4 E4 G4 A4 G4 E4
+  const notes = [261.63, 329.63, 392.00, 440.00, 392.00, 329.63, 261.63, 329.63];
+  const dur = 0.55;
+  let t = ac.currentTime + 0.3;
+
+  function scheduleLoop(){
+    notes.forEach((freq, i) => {
+      const osc = ac.createOscillator();
+      const g   = ac.createGain();
+      osc.type = 'sine';
+      osc.frequency.value = freq;
+      g.gain.setValueAtTime(0, t + i*dur);
+      g.gain.linearRampToValueAtTime(.5, t + i*dur + .08);
+      g.gain.linearRampToValueAtTime(0, t + i*dur + dur*.85);
+      osc.connect(g); g.connect(masterGain);
+      osc.start(t + i*dur);
+      osc.stop(t + i*dur + dur);
+    });
+    t += notes.length * dur;
+    if(bgPlaying) setTimeout(scheduleLoop, (notes.length * dur - 0.5)*1000);
+  }
+  scheduleLoop();
+}
+
+/* Alarm siren sound */
+function startAlarmSound(){
+  if(alarmPlaying) return;
+  alarmPlaying = true;
+  const ac = getCtx();
+
+  // Fade bg music down
+  if(masterGain){
+    masterGain.gain.cancelScheduledValues(ac.currentTime);
+    masterGain.gain.linearRampToValueAtTime(.03, ac.currentTime+.4);
+  }
+
+  function makeSiren(){
+    if(!alarmPlaying) return;
+    const osc  = ac.createOscillator();
+    const gain = ac.createGain();
+    const dist = ac.createWaveShaper();
+
+    // waveshaper for grit
+    const curve = new Float32Array(256);
+    for(let i=0;i<256;i++) curve[i] = ((i/128)-1)*0.6;
+    dist.curve = curve;
+
+    osc.type = 'sawtooth';
+    // sweep up then down
+    const now = ac.currentTime;
+    osc.frequency.setValueAtTime(600, now);
+    osc.frequency.linearRampToValueAtTime(900, now+.4);
+    osc.frequency.linearRampToValueAtTime(600, now+.8);
+
+    gain.gain.setValueAtTime(.25, now);
+    gain.gain.linearRampToValueAtTime(.22, now+.8);
+    gain.gain.linearRampToValueAtTime(0, now+.9);
+
+    osc.connect(dist); dist.connect(gain); gain.connect(ac.destination);
+    osc.start(now); osc.stop(now+.9);
+
+    const id = setTimeout(makeSiren, 950);
+    alarmNodes.push(id);
+  }
+  makeSiren();
+}
+
+function stopAlarmSound(){
+  if(!alarmPlaying) return;
+  alarmPlaying = false;
+  alarmNodes.forEach(clearTimeout);
+  alarmNodes = [];
+  const ac = getCtx();
+  if(masterGain){
+    masterGain.gain.cancelScheduledValues(ac.currentTime);
+    masterGain.gain.linearRampToValueAtTime(.18, ac.currentTime+1);
+  }
+}
+
+/* Success jingle */
+function playSuccess(){
+  stopAlarmSound();
+  bgPlaying = false;
+  const ac = getCtx();
+  if(masterGain){masterGain.gain.linearRampToValueAtTime(0,ac.currentTime+.3);}
+  const sucGain = ac.createGain();
+  sucGain.gain.setValueAtTime(.3, ac.currentTime);
+  sucGain.connect(ac.destination);
+  const melody = [523.25,659.25,783.99,1046.50,783.99,659.25,1046.50];
+  const times  = [0,.15,.3,.55,.75,.9,1.1];
+  melody.forEach((f,i)=>{
+    const o=ac.createOscillator(), g=ac.createGain();
+    o.type='sine'; o.frequency.value=f;
+    const t=ac.currentTime+times[i];
+    g.gain.setValueAtTime(0,t);
+    g.gain.linearRampToValueAtTime(.6,t+.05);
+    g.gain.linearRampToValueAtTime(0,t+.35);
+    o.connect(g);g.connect(sucGain);
+    o.start(t);o.stop(t+.4);
+  });
+}
+
+/* ══════════════════════════════
+   CANVAS — floating hearts + stars
+══════════════════════════════ */
+const cvs = document.getElementById('cvs');
+const ctx2 = cvs.getContext('2d');
+let W, H, parts = [];
+function resize(){ W = cvs.width = window.innerWidth; H = cvs.height = window.innerHeight; }
+window.addEventListener('resize', resize); resize();
+
+const EMOJIS = ['🤍','💗','🌸','✨','⭐','🌟','💕','🤍','🤍','🤍','✦'];
+function mkP(){
+  return {x:Math.random()*W, y:H+30, emoji:EMOJIS[Math.floor(Math.random()*EMOJIS.length)],
+    size:11+Math.random()*16, speed:.35+Math.random()*.75, drift:(Math.random()-.5)*.45,
+    rot:Math.random()*360, rotS:(Math.random()-.5)*1.5, alpha:0, ph:Math.random()*Math.PI*2};
+}
+for(let i=0;i<32;i++){const p=mkP();p.y=Math.random()*H;p.alpha=Math.random()*.7;parts.push(p);}
+
+function animC(){
+  ctx2.clearRect(0,0,W,H);
+  if(parts.length<40&&Math.random()<.05) parts.push(mkP());
+  parts=parts.filter(p=>{
+    p.y-=p.speed; p.x+=p.drift+Math.sin(p.ph+p.y*.012)*.4; p.rot+=p.rotS;
+    p.alpha+= p.y>H*.8?.02:(p.y<H*.2?-.02:0);
+    p.alpha=Math.max(0,Math.min(.85,p.alpha));
+    ctx2.save(); ctx2.globalAlpha=p.alpha; ctx2.font=p.size+'px serif';
+    ctx2.translate(p.x,p.y); ctx2.rotate(p.rot*Math.PI/180);
+    ctx2.fillText(p.emoji,-p.size/2,p.size/2); ctx2.restore();
+    return p.y>-40;
+  });
+  requestAnimationFrame(animC);
+}
+animC();
+
+/* ══════════════════════════════
+   NO BUTTON
+══════════════════════════════ */
+const no=document.getElementById('bno');
+const yes=document.getElementById('byes');
+let noCnt=0, audioStarted=false;
+
+no.style.top  = Math.round(window.innerHeight*.52)+'px';
+no.style.left = Math.round(window.innerWidth*.55-50)+'px';
+
+function rndPos(){
+  const bw=110,bh=52,mg=24; let x,y,tries=0;
+  do{ x=mg+Math.random()*(W-bw-mg*2); y=mg+Math.random()*(H-bh-mg*2); tries++; }
+  while(tries<20&&y>H*.72&&x>W*.25&&x<W*.72);
+  return{x,y};
+}
+
+function initAudio(){
+  if(audioStarted) return;
+  audioStarted=true;
+  startBgMusic();
+}
+
+function runAway(e){
+  if(e){e.preventDefault();e.stopPropagation();}
+  initAudio();
+  noCnt++;
+  if(noCnt<5){
+    const fs=Math.max(.7,1-noCnt*.05);
+    no.style.fontSize=fs+'rem'; no.style.padding=(.75*fs)+'rem '+(1.8*fs)+'rem';
+    const{x,y}=rndPos(); no.style.left=x+'px'; no.style.top=y+'px';
+  } else {
+    no.style.opacity='0'; no.style.pointerEvents='none';
+    showAlarm();
+  }
+}
+
+function showAlarm(){
+  document.getElementById('alarm').classList.add('on');
+  startAlarmSound();
+}
+
+/* "Xeyr deyirəm" in alarm — just shake screen and loop alarm again immediately */
+let alarmLoopTimer = null;
+function alarmContinue(){
+  initAudio();
+  // flash extra red
+  const al=document.getElementById('alarm');
+  al.style.background='rgba(80,0,0,.95)';
+  setTimeout(()=>{ al.style.background=''; }, 300);
+  // restart alarm bar animation
+  const bar=document.querySelector('.alarm-bar');
+  bar.style.animation='none';
+  void bar.offsetWidth;
+  bar.style.animation='drain 5s linear infinite';
+  // alarm stays open — sound keeps going — NO escape
+}
+window.alarmContinue=alarmContinue;
+
+no.addEventListener('mouseenter', runAway);
+no.addEventListener('touchstart', runAway,{passive:false});
+no.addEventListener('click', runAway);
+
+/* ══════════════════════════════
+   YES
+══════════════════════════════ */
+function doYes(){
+  initAudio();
+  playSuccess();
+  spawnConf();
+  document.getElementById('alarm').classList.remove('on');
+  document.getElementById('s1').classList.add('out');
+  yes.style.display='none'; no.style.display='none';
+  setTimeout(()=>document.getElementById('s2').classList.remove('out'),350);
+}
+window.doYes=doYes;
+
+/* ══════════════════════════════
+   CONFETTI
+══════════════════════════════ */
+function spawnConf(){
+  const cols=['#ff2d55','#ffd6e0','#d4a04a','#ffa7c0','#ffffff','#ff9ab5','#ffecf0'];
+  const c=document.getElementById('conf');
+  for(let i=0;i<120;i++){
+    const el=document.createElement('div'); el.className='c';
+    const sz=5+Math.random()*9;
+    el.style.cssText=`left:${Math.random()*100}vw;width:${sz}px;height:${sz}px;background:${cols[Math.floor(Math.random()*cols.length)]};border-radius:${Math.random()>.5?'50%':'2px'};animation-duration:${1.5+Math.random()*2.5}s;animation-delay:${Math.random()*.8}s;`;
+    c.appendChild(el); setTimeout(()=>el.remove(),4000);
+  }
+}
+
+/* Start audio on first any touch/click (iOS requirement) */
+document.addEventListener('touchstart', initAudio, {once:true});
+document.addEventListener('click', initAudio, {once:true});
+</script>
+</body>
+</html>
